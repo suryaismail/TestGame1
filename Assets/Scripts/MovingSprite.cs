@@ -16,7 +16,7 @@ public class MovingSprite : MonoBehaviour
     void Update()
     {
         Vector2 position = transform.position;
-        if (position.x > Player.right){
+        if (position.x > Scene1.right){
             xStep = -xStep;
         }
         position.x = position.x + xStep;
