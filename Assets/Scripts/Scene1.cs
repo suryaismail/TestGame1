@@ -14,7 +14,7 @@ public class Scene1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject spritePrefab = (GameObject)Resources.Load("Prefabs/RotatingSprite", typeof(GameObject));
+        GameObject spritePrefab = (GameObject)Resources.Load("Prefabs/MovingSprite", typeof(GameObject));
 
         Instantiate(spritePrefab, new Vector2(0, 0), Quaternion.identity);
     }
