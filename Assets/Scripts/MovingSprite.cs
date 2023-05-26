@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class MovingSprite : MonoBehaviour
 {
-    float xStep = 0.01f;
+    float xStep = 1f;
+
+    public float getXStep()
+    {
+        return xStep;
+    }
+
+    public void setXStep(float xStep)
+    {
+        this.xStep = xStep;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +26,11 @@ public class MovingSprite : MonoBehaviour
     void Update()
     {
         Vector2 position = transform.position;
-        if (position.x > Scene1.right){
+        if ((position.x > Scene1.right) || (position.x < Scene1.left))
+        {
             xStep = -xStep;
         }
-        position.x = position.x + xStep;
+        position.x += xStep * Time.deltaTime;
 
         transform.position = position;
     }
